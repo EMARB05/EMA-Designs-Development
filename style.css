@@ -1,0 +1,820 @@
+/* --- RESETEO Y VARIABLES --- */
+:root {
+  /* Paleta basada en la imagen: Negro (#000) de fondo, Blanco (#fff) texto, Gris (#222) */
+  --bg-color: #000000;
+  --header-bg: rgba(0, 0, 0, 0.85); /* Negro casi opaco para el header */
+  --text-primary: #ffffff;
+  --text-secondary: #c0c0c0; /* Gris claro para subtítulos y párrafos */
+  
+  /* Color de contraste elegante para botones principales: Dorado/Naranja (#C27B3F) */
+  --primary-color: #C27B3F; 
+  --primary-hover: #D89F67;
+
+  --btn-secondary-bg: #222222; /* Gris oscuro para el botón de 'Contactar' en el Hero */
+  --btn-secondary-hover: #333333;
+  
+  --card-bg: #111111; /* Gris oscuro para las tarjetas de proyectos */
+  --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+  
+  --transition-speed: 0.3s;
+  --container-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.propuesta{
+    width: 22px;
+}
+
+/* --- ANIMACIONES AL HACER SCROLL --- */
+
+/* Estado inicial: oculto y ligeramente desplazado hacia abajo */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Estado activo: visible en su posición original */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- HEADER (MENÚ) --- */
+header {
+  position: fixed; /* Flota sobre el Hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--header-bg);
+  backdrop-filter: blur(5px); /* Efecto de desenfoque detrás del menú */
+  z-index: 1000;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Línea divisoria muy suave */
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilo del Logo EMA Designs & Development */
+.logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Resalta "Designs & Development" en tu color dorado/naranja */
+.logo span {
+  color: var(--primary-color); /* Utiliza el tono naranja/dorado que configuramos */
+  font-weight: 400;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color var(--transition-speed);
+}
+
+nav ul li a:hover {
+  color: var(--text-primary);
+}
+
+/* --- SECCIÓN HERO (AJUSTE PERFECTO PARA EL VIDEO DE ECLIPSE) --- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ocupa el 100% exacto del alto de la pantalla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+/* El truco CSS exacto para que el video llene toda la pantalla sin estirarse */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover; /* Recorta suavemente los bordes sobrantes manteniedo la proporción */
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Capa oscura (Overlay) con degradado elegante hacia abajo */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradiente: El video se aprecia en el centro, y abajo se oscurece para conectar suave con los proyectos */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.98) 100%
+  );
+  z-index: 2;
+}
+
+/* Contenido centrado por encima del video */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--text-primary);
+  max-width: 800px;
+  padding: 0 24px;
+}
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: rgba(255, 255, 255, 0.1); /* Más oscuro para minimalismo */
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* Botones Hero */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-speed) ease;
+  border: none;
+  cursor: pointer;
+}
+
+/* BOTÓN PRINCIPAL: AHORA NARANJA DORADO */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* BOTÓN SECUNDARIO: GRIS OSCURO */
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+  background-color: var(--btn-secondary-hover);
+  transform: translateY(-2px);
+}
+
+/* --- SECCIÓN DE PROYECTOS --- */
+.projects {
+  padding: 100px 0;
+  background-color: #050505; /* Fondo ligeramente más claro que el negro absoluto */
+}
+
+.projects h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.projects .subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid de proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsivo automático */
+  gap: 30px;
+}
+
+/* Tarjeta de Proyecto individual */
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  border: 1px solid rgba(255, 255, 255, 0.03); /* Borde muy sutil */
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow);
+  border-color: rgba(255, 255, 255, 0.08); /* Resalta más en hover */
+}
+
+.project-card-image {
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen llene el espacio */
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-card-image img {
+  transform: scale(1.05); /* Pequeño zoom en la imagen al hacer hover */
+}
+
+.project-card-content {
+  padding: 25px;
+}
+
+.project-card-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+.project-card-content p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* Etiquetas (tags) de tecnologías */
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.tags span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Botón de la tarjeta de proyecto a Vercel */
+.btn-card {
+  display: block; /* Ocupa todo el ancho */
+  text-align: center;
+  padding: 12px 20px;
+  background-color: transparent;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid var(--primary-color);
+  transition: all var(--transition-speed) ease;
+}
+
+.btn-card:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* --- SECCIÓN CONTACTO PRO --- */
+.contacto {
+  padding: 100px 0;
+  background: radial-gradient(circle at center, rgba(194, 123, 63, 0.05) 0%, rgba(0, 0, 0, 1) 70%);
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* Lado izquierdo */
+.contact-info .badge {
+  background: rgba(194, 123, 63, 0.15);
+  color: var(--primary-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+  border: 1px solid rgba(194, 123, 63, 0.3);
+}
+
+.contact-info h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.contact-info p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.contact-features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.feature-icon {
+  font-size: 1.4rem;
+  background: rgba(255, 255, 255, 0.03);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.feature-item h4 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+
+.feature-item p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* Tarjeta del Formulario */
+/* EFECTO SPOTLIGHT / ILUMINACIÓN DENTRO DE LA TARJETA */
+.contact-card,
+.spotlight {
+  position: relative;
+  background-color: var(--card-bg, #0d0d12);
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  overflow: hidden; /* Evita que el resplandor sobresalga de la tarjeta */
+}
+
+/* Capa de luz dinámica */
+.contact-card::before,
+.spotlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Crea una linterna suave en la posición exacta del cursor */
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(194, 123, 63, 0.15), /* Color dorado de tu marca con opacidad */
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Permite hacer clic en los inputs sin interferir */
+  z-index: 1;
+}
+
+/* Al pasar el mouse, hacemos visible el resplandor */
+.contact-card:hover::before,
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Mantener el contenido por encima de la luz de fondo */
+.contact-form,
+.spotlight > * {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.form-group label {
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Estilo para las opciones del desplegable */
+.form-group select option {
+  background-color: #121218;
+  color: #ffffff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(194, 123, 63, 0.15);
+}
+
+/* Botón de Enviar */
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(194, 123, 63, 0.3);
+}
+
+/* Responsivo para celulares */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .contact-card {
+    padding: 25px;
+  }
+}
+
+/* --- RESPONSIVO PARA MÓVILES --- */
+@media (max-width: 900px) {
+  :root {
+    --container-width: 700px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr; /* Una columna en tablets/móviles */
+  }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    gap: 15px; /* Menú más junto en móviles */
+  }
+  
+  nav ul li a {
+    font-size: 0.85rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column; /* Botones uno encima del otro */
+    gap: 10px;
+  }
+}
+/* --- SECCIÓN PROCESO DE TRABAJO --- */
+.proceso {
+  padding: 100px 0;
+  background-color: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.proceso h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.proceso .subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid de los 4 pasos */
+.proceso-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* Tarjeta individual de paso */
+.step-card {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+/* Número del paso con estilo dorado sutil */
+.step-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  opacity: 0.8;
+  margin-bottom: 15px;
+  line-height: 1;
+}
+
+.step-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+  .proceso-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- FOOTER PRO --- */
+.site-footer {
+  background-color: #000000; 
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 70px;
+  color: #a1a1aa;
+  font-size: 0.92rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  padding-bottom: 60px;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+.footer-brand p {
+  margin-top: 18px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  max-width: 300px;
+  color: #8f8f9d;
+}
+
+/* Redes Sociales Círculos */
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.social-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(194, 123, 63, 0.2);
+}
+
+/* Enlaces de Menú */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: #8f8f9d;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+}
+
+/* Lista de Contacto con Iconos */
+.footer-contact ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8f8f9d;
+}
+
+.footer-contact svg {
+  color: var(--primary-color); /* Tono morado/lila brillante del ejemplo */
+  flex-shrink: 0;
+}
+
+/* Sub-footer Inferior */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 22px 0;
+  font-size: 0.85rem;
+  color: #616170;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botón Flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 54px;
+  height: 54px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  z-index: 99;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* Adaptación Responsive para Móviles */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

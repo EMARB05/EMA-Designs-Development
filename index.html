@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portafolio | Diseño & Desarrollo Web Freelance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER (MENÚ DE NAVEGACIÓN) -->
+  <header>
+    <div class="container">
+      <div class="logo">EMA <span>Designs & Development</span></div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SECCIÓN HERO -->
+  <section id="hero" class="hero">
+    <div class="container hero-layout">
+
+      <!-- LADO IZQUIERDO: Texto y Botones -->
+      <div class="hero-content">
+        <span class="badge">Desarrollo Web Freelance</span>
+        <h1>Impulsa tu negocio con una web moderna</h1>
+        <p>Diseño tiendas online y catálogos digitales enfocados en convertir visitantes en clientes reales.</p>
+
+        <div class="hero-buttons">
+          <a href="#proyectos" class="btn btn-primary">Ver mis proyectos</a>
+          <a href="#contacto" class="btn btn-secondary">Contactar</a>
+        </div>
+      </div>
+
+      <!-- LADO DERECHO: El video en tamaño reducido/marcado -->
+      <div class="hero-video-wrapper">
+        <div class="video-frame">
+          <video class="hero-video" autoplay loop muted playsinline poster="assets/hero-poster.jpg">
+            <source src="./resources/eclipse.mp4" type="video/mp4">
+            Tu navegador no soporta videos en HTML5.
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE PROYECTOS -->
+  <section id="proyectos" class="projects reveal spotlight">
+    <div class="container">
+      <h2>Mis Soluciones Web</h2>
+      <p class="subtitle">Descubre cómo ayudo a otros negocios a tener éxito en internet.</p>
+
+      <div class="projects-grid">
+
+        <!-- PROYECTO 1: TIENDA DE CAMISETAS (ecommerce) -->
+        <article class="project-card reveal spotlight">
+          <div class="project-card-image">
+            <!-- Pon aquí una imagen o captura de tu tienda de camisetas -->
+            <img src="./resources/EmaSportPortada.png" alt="Captura de Tienda de Camisetas">
+          </div>
+          <div class="project-card-content">
+            <h3>Tienda de Camisetas Online (Ecommerce)</h3>
+            <p>Una tienda para un negocio de camisetas personalizadas. Incluye carrito de compras, filtros, inicio de
+              sesión con google.</p>
+            <div class="tags">
+              <span>React</span>
+              <span>Next JS</span>
+              <span>TypeScript</span>
+            </div>
+            <!-- BOTÓN A VERCEL (Abre en pestaña nueva) -->
+            <a href="https://ema-sport.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card">Ver Demo
+              en Vivo</a>
+          </div>
+        </article>
+
+        <!-- PROYECTO 2: CATÁLOGO DE MANUALIDADES (pulseras/peluches) -->
+        <article class="project-card reveal spotlight">
+          <div class="project-card-image">
+            <!-- Pon aquí una imagen o captura de tu catálogo de manualidades -->
+            <img src="./resources/entreNudosPortada.png" alt="Captura de Catálogo de Manualidades">
+          </div>
+          <div class="project-card-content">
+            <h3>Catálogo Digital de Manualidades</h3>
+            <p>Un catálogo visual para mostrar pulseras y peluches hechos a mano. Enfocado en la estética y con opción
+              de pedir por Instagram.</p>
+            <div class="tags">
+              <span>React</span>
+              <span>Next JS</span>
+              <span>Figma</span>
+            </div>
+            <!-- BOTÓN A VERCEL (Abre en pestaña nueva) -->
+            <a href="https://entre-nudos.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card">Ver
+              Demo en Vivo</a>
+          </div>
+          <!--Proyecto 3: Munay-->
+        </article>
+
+        <article class="project-card reveal spotlight">
+          <div class="project-card-image">
+            <img src="./resources/munayPortada.png" alt="Captura de Catálogo de Manualidades">
+          </div>
+          <div class="project-card-content">
+            <h3>Munay | Restaurante Peruano</h3>
+            <p>Una web que da a conocer a un restaurante de comida exclusivamente peruana, carta de comidas, galeria de
+              fotos, formulario de contacto</p>
+            <div class="tags">
+              <span>HTML/CSS/JS</span>
+              <span>Figma</span>
+            </div>
+            <!-- BOTÓN A VERCEL (Abre en pestaña nueva) -->
+            <a href="https://munaycocinaperuana.netlify.app/" target="_blank" rel="noopener noreferrer"
+              class="btn-card">Ver Demo en Vivo</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PROCESO DE TRABAJO -->
+  <section id="proceso" class="proceso reveal spotlight">
+    <div class="container">
+      <h2>¿Cómo trabajamos juntos?</h2>
+      <p class="subtitle">Un proceso claro de 4 pasos para llevar tu idea a una web real sin complicaciones.</p>
+
+      <div class="proceso-steps">
+
+        <!-- Paso 1 -->
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>1. Consulta y Planificación</h3>
+          <p>Hablamos sobre tu negocio, tus objetivos y lo que necesitas. Definimos la estructura de la web, las
+            secciones clave y te entregamos una propuesta clara.</p>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>2. Diseño y Prototipado</h3>
+          <p>Creo la propuesta visual de tu sitio web (colores, tipografías y estructura) adaptada a tu marca para que
+            veas exactamente cómo lucirá antes de programar.</p>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>3. Desarrollo y Pruebas</h3>
+          <p>Escribo el código de tu web asegurando que cargue ultra rápido, se adapte perfectamente a celulares y tenga
+            todas las funciones listas (carrito, formularios, WhatsApp).</p>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h3>4. Lanzamiento y Entrega</h3>
+          <p>Publicamos la web en tu propio dominio, hacemos las pruebas finales y te entrego todo listo para que
+            empieces a recibir clientes desde el primer día.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE CONTACTO PRO -->
+  <section id="contacto" class="contacto reveal spotlight">
+    <div class="container contact-container">
+
+      <!-- Lado Izquierdo: Información de venta -->
+      <div class="contact-info">
+        <span class="badge">¿Hablamos?</span>
+        <h2>Llevemos tu negocio al siguiente nivel</h2>
+        <p>¿Tienes una idea en mente o necesitas modernizar tu web actual? Cuéntame tu proyecto y te responderé en menos
+          de 24 horas con una propuesta sin compromiso.</p>
+
+        <div class="contact-features">
+          <div class="feature-item">
+            <div class="feature-icon">⚡</div>
+            <div>
+              <h4>Respuesta rápida</h4>
+              <p>Atención prioritaria por correo o WhatsApp.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"> <img src="./resources/propuesta.png" class="propuesta"></div>
+            <div>
+              <h4>Propuesta clara</h4>
+              <p>Presupuesto transparente sin costes ocultos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lado Derecho: Formulario Interactivo -->
+      <div class="contact-card">
+        <form action="https://formspree.io/f/TU_FORM_ID" method="POST" class="contact-form">
+
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="juan@ejemplo.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="servicio">¿Qué servicio necesitas?</label>
+            <select id="servicio" name="servicio" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="desarrollo-web">Desarrollo Web Personalizado</option>
+              <option value="ecommerce">Tienda Online / Ecommerce</option>
+              <option value="catalogo">Catálogo Digital</option>
+              <option value="diseno">Diseño UI/UX</option>
+              <option value="otro">Otro consulta</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Cuéntame sobre tu proyecto</label>
+            <textarea id="mensaje" name="mensaje" rows="4"
+              placeholder="Detalles de tu idea, presupuesto estimado o dudas..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-submit">
+            <span>Enviar mensaje</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER MODERNO -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+
+      <!-- Columna 1: Marca y Redes -->
+      <div class="footer-col footer-brand">
+        <div class="logo">EMA <span>Designs & Development</span></div>
+        <p>Diseñamos experiencias digitales que conectan, comunican y convierten.</p>
+
+        <div class="social-links">
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="https://wa.me/607454400" target="_blank" aria-label="WhatsApp" class="social-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna 2: Navegación -->
+      <div class="footer-col">
+        <h4>NAVEGACIÓN</h4>
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Servicios -->
+      <div class="footer-col">
+        <h4>SERVICIOS</h4>
+        <ul>
+          <li><a href="#proyectos">Desarrollo Web</a></li>
+          <li><a href="#proyectos">Ecommerce</a></li>
+          <li><a href="#proyectos">Catálogos Digitales</a></li>
+          <li><a href="#proyectos">Diseño UI/UX</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Contacto Directo -->
+      <div class="footer-col footer-contact">
+        <h4>CONTACTO</h4>
+        <ul>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            <a href="mailto:tu-correo@ejemplo.com">emanuelabnerrodriguezbaltazar@gmail.com</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>+34 607 45 44 00</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>A Coruña, España</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Barra Inferior de Copyright -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 EMA Designs & Development. Hecho en Lima, Perú.</p>
+        <p>Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante de WhatsApp (Inferior Derecha) -->
+  <a href="https://wa.me/607454400" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+    </svg>
+  </a>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
