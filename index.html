@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Portafolio | Diseño & Desarrollo Web Freelance</title>
+  <meta name="viewport" content="width=device-width, initial-scalef=1.0">
+  <title>Mi Portafolio | YMAESTUDIO</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/resources/ymaestudio-favicon.ico">
 </head>
 
 <body>
@@ -13,7 +14,7 @@
   <!-- HEADER (MENÚ DE NAVEGACIÓN) -->
   <header>
     <div class="container">
-      <div class="logo">EMA <span>Designs & Development</span></div>
+      <div class="logo">YMAE <span>Designs & Development</span></div>
       <nav>
         <ul>
           <li><a href="#hero">Inicio</a></li>
@@ -31,10 +32,6 @@
 
       <!-- LADO IZQUIERDO: Texto y Botones -->
       <div class="hero-content">
-        <span class="badge">Desarrollo Web Freelance</span>
-        <h1>Impulsa tu negocio con una web moderna</h1>
-        <p>Diseño tiendas online y catálogos digitales enfocados en convertir visitantes en clientes reales.</p>
-
         <div class="hero-buttons">
           <a href="#proyectos" class="btn btn-primary">Ver mis proyectos</a>
           <a href="#contacto" class="btn btn-secondary">Contactar</a>
@@ -44,10 +41,10 @@
       <!-- LADO DERECHO: El video en tamaño reducido/marcado -->
       <div class="hero-video-wrapper">
         <div class="video-frame">
-          <video class="hero-video" autoplay loop muted playsinline poster="assets/hero-poster.jpg">
-            <source src="./resources/eclipse.mp4" type="video/mp4">
-            Tu navegador no soporta videos en HTML5.
-          </video>
+          <picture>
+            <source media="(max-width: 768px)" srcset="./resources/hero-mobil.png">
+            <img class="hero-img" src="./resources/hero.png" alt="YMAE Studio: apps, soluciones web y diseño">
+          </picture>
         </div>
       </div>
 
@@ -62,66 +59,103 @@
 
       <div class="projects-grid">
 
-        <!-- PROYECTO 1: TIENDA DE CAMISETAS (ecommerce) -->
-        <article class="project-card reveal spotlight">
+        <!-- PROYECTO 1 (DESTACADO): TIENDA DE CAMISETAS -->
+        <article class="project-card project-card--featured reveal spotlight">
           <div class="project-card-image">
-            <!-- Pon aquí una imagen o captura de tu tienda de camisetas -->
-            <img src="./resources/EmaSportPortada.png" alt="Captura de Tienda de Camisetas">
+            <img src="./resources/EmaSportPortada.png" alt="Captura de la tienda online de camisetas Ema Sport">
           </div>
           <div class="project-card-content">
-            <h3>Tienda de Camisetas Online (Ecommerce)</h3>
-            <p>Una tienda para un negocio de camisetas personalizadas. Incluye carrito de compras, filtros, inicio de
-              sesión con google.</p>
+            <span class="project-badge">Proyecto destacado</span>
+            <h3>Tienda de Camisetas Online</h3>
+            <p>Tienda completa para un negocio de camisetas personalizadas: los clientes filtran el catálogo,
+              llenan el carrito e inician sesión con Google.</p>
             <div class="tags">
               <span>React</span>
               <span>Next JS</span>
               <span>TypeScript</span>
+              <span>Supabase</span>
             </div>
-            <!-- BOTÓN A VERCEL (Abre en pestaña nueva) -->
-            <a href="https://ema-sport.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card">Ver Demo
-              en Vivo</a>
+            <a href="https://ema-sport.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card">Ver demo
+              en vivo</a>
           </div>
         </article>
 
-        <!-- PROYECTO 2: CATÁLOGO DE MANUALIDADES (pulseras/peluches) -->
+        <!-- PROYECTO 2: CATÁLOGO DE MANUALIDADES -->
         <article class="project-card reveal spotlight">
           <div class="project-card-image">
-            <!-- Pon aquí una imagen o captura de tu catálogo de manualidades -->
-            <img src="./resources/entreNudosPortada.png" alt="Captura de Catálogo de Manualidades">
+            <img src="./resources/entreNudosPortada.png" alt="Captura del catálogo digital Entre Nudos">
           </div>
           <div class="project-card-content">
             <h3>Catálogo Digital de Manualidades</h3>
-            <p>Un catálogo visual para mostrar pulseras y peluches hechos a mano. Enfocado en la estética y con opción
-              de pedir por Instagram.</p>
+            <p>Catálogo visual para mostrar pulseras y peluches hechos a mano, con un diseño cuidado y pedidos
+              directos por Instagram.</p>
             <div class="tags">
               <span>React</span>
               <span>Next JS</span>
               <span>Figma</span>
             </div>
-            <!-- BOTÓN A VERCEL (Abre en pestaña nueva) -->
             <a href="https://entre-nudos.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card">Ver
-              Demo en Vivo</a>
+              demo en vivo</a>
           </div>
-          <!--Proyecto 3: Munay-->
         </article>
 
+        <!-- PROYECTO 3: MUNAY -->
         <article class="project-card reveal spotlight">
           <div class="project-card-image">
-            <img src="./resources/munayPortada.png" alt="Captura de Catálogo de Manualidades">
+            <img src="./resources/munayPortada.png" alt="Captura de la web del restaurante peruano Munay">
           </div>
           <div class="project-card-content">
             <h3>Munay | Restaurante Peruano</h3>
-            <p>Una web que da a conocer a un restaurante de comida exclusivamente peruana, carta de comidas, galeria de
-              fotos, formulario de contacto</p>
+            <p>Web para un restaurante de cocina peruana: carta, galería de fotos y formulario de contacto para
+              que los clientes puedan reservar.</p>
             <div class="tags">
               <span>HTML/CSS/JS</span>
               <span>Figma</span>
             </div>
-            <!-- BOTÓN A VERCEL (Abre en pestaña nueva) -->
             <a href="https://munaycocinaperuana.netlify.app/" target="_blank" rel="noopener noreferrer"
-              class="btn-card">Ver Demo en Vivo</a>
+              class="btn-card">Ver demo en vivo</a>
           </div>
         </article>
+        <!-- PROYECTO 4: Salero Beach -->
+        <article class="project-card reveal spotlight">
+          <div class="project-card-image">
+            <img src="./resources/saleroBeachPortada.png"
+              alt="Captura del sistema de gestion de comandas del bar Salero Beach">
+          </div>
+          <div class="project-card-content">
+            <h3>Salero Beach</h3>
+            <p>Proyecto pensado para la mejora del negocio en cuanto a eficiencia, ya que mejora el flujo del trabajo,
+              reduce los errores al momento de tomar los pedidos, y ayuda a gestionar el negocio de la mejor manera.</p>
+            <div class="tags">
+              <span>HTML/CSS/JS</span>
+              <span>Figma</span>
+              <span>React</span>
+              <span>Mongo db</span>
+            </div>
+            <a href="https://salerobeach-frontend.onrender.com/" target="_blank" rel="noopener noreferrer"
+              class="btn-card">Ver demo en vivo</a>
+          </div>
+        </article>
+        <!-- PROYECTO 5: ChateaPe -->
+        <article class="project-card reveal spotlight">
+          <div class="project-card-image">
+            <img src="./resources/chateaPe.jpeg" alt="Captura del sistema de gestion de comandas del bar Salero Beach">
+          </div>
+          <div class="project-card-content">
+            <h3>ChateaPe</h3>
+            <p>Aplicación para conocer y chatear con amigos</p>
+            <div class="tags">
+              <span>React Native</span>
+              <span>Expo</span>
+              <span></span>
+              <span>Supabase</span>
+            </div>
+            <a href="resources/descargas/ChateaPe.apk" download="ChateaPe.apk" target="_blank" rel="noopener noreferrer"
+              class="btn-card">Descargar apk</a>
+          </div>
+        </article>
+
+
 
       </div>
     </div>
@@ -202,7 +236,13 @@
 
       <!-- Lado Derecho: Formulario Interactivo -->
       <div class="contact-card">
-        <form action="https://formspree.io/f/TU_FORM_ID" method="POST" class="contact-form">
+        <form name="contacto" method="POST" action="/gracias.html" data-netlify="true" netlify-honeypot="bot-field"
+          class="contact-form">
+
+          <input type="hidden" name="form-name" value="contacto">
+          <p hidden>
+            <label>No rellenar: <input name="bot-field"></label>
+          </p>
 
           <div class="form-group">
             <label for="nombre">Nombre completo</label>
@@ -253,7 +293,7 @@
 
       <!-- Columna 1: Marca y Redes -->
       <div class="footer-col footer-brand">
-        <div class="logo">EMA <span>Designs & Development</span></div>
+        <div class="logo">YMAE <span>Designs & Development</span></div>
         <p>Diseñamos experiencias digitales que conectan, comunican y convierten.</p>
 
         <div class="social-links">
@@ -312,7 +352,7 @@
               <rect width="20" height="16" x="2" y="4" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
-            <a href="mailto:tu-correo@ejemplo.com">emanuelabnerrodriguezbaltazar@gmail.com</a>
+            <a href="mailto:tu-correo@ejemplo.com">emanuel.abner.rodriguez@gmail.com</a>
           </li>
           <li>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -338,8 +378,7 @@
     <!-- Barra Inferior de Copyright -->
     <div class="footer-bottom">
       <div class="container footer-bottom-content">
-        <p>&copy; 2026 EMA Designs & Development. Hecho en Lima, Perú.</p>
-        <p>Todos los derechos reservados.</p>
+        <p>&copy; 2026 YMAE STUDIO, todos los derechos reservados.</p>
       </div>
     </div>
   </footer>

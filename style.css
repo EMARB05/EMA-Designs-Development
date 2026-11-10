@@ -1,19 +1,19 @@
 /* --- RESETEO Y VARIABLES --- */
 :root {
   /* Paleta basada en la imagen: Negro (#000) de fondo, Blanco (#fff) texto, Gris (#222) */
-  --bg-color: #000000;
+  --bg-color: #020207;
   --header-bg: rgba(0, 0, 0, 0.85); /* Negro casi opaco para el header */
   --text-primary: #ffffff;
   --text-secondary: #c0c0c0; /* Gris claro para subtítulos y párrafos */
   
   /* Color de contraste elegante para botones principales: Dorado/Naranja (#C27B3F) */
-  --primary-color: #C27B3F; 
-  --primary-hover: #D89F67;
+  --primary-color: #9852FD; 
+  --primary-hover: #0C081E;
 
   --btn-secondary-bg: #222222; /* Gris oscuro para el botón de 'Contactar' en el Hero */
   --btn-secondary-hover: #333333;
   
-  --card-bg: #111111; /* Gris oscuro para las tarjetas de proyectos */
+  --card-bg: #0C081E; /* Gris oscuro para las tarjetas de proyectos */
   --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
   
   --transition-speed: 0.3s;
@@ -128,7 +128,7 @@ nav ul li a:hover {
 }
 
 /* El truco CSS exacto para que el video llene toda la pantalla sin estirarse */
-.hero-video {
+.hero-img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -195,7 +195,9 @@ nav ul li a:hover {
 /* Botones Hero */
 .hero-buttons {
   display: flex;
-  gap: 16px;
+  margin-top: 300px;
+  align-items: center;
+  gap: 25px;
   justify-content: center;
 }
 
@@ -213,6 +215,7 @@ nav ul li a:hover {
 
 /* BOTÓN PRINCIPAL: AHORA NARANJA DORADO */
 .btn-primary {
+  
   background-color: var(--primary-color);
   color: #fff;
 }
@@ -237,7 +240,7 @@ nav ul li a:hover {
 /* --- SECCIÓN DE PROYECTOS --- */
 .projects {
   padding: 100px 0;
-  background-color: #050505; /* Fondo ligeramente más claro que el negro absoluto */
+  background-color: #020207; /* Fondo ligeramente más claro que el negro absoluto */
 }
 
 .projects h2 {
@@ -257,12 +260,7 @@ nav ul li a:hover {
   margin-right: auto;
 }
 
-/* Grid de proyectos */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsivo automático */
-  gap: 30px;
-}
+
 
 /* Tarjeta de Proyecto individual */
 .project-card {
@@ -280,7 +278,6 @@ nav ul li a:hover {
 }
 
 .project-card-image {
-  height: 220px;
   width: 100%;
   overflow: hidden;
 }
@@ -365,7 +362,7 @@ nav ul li a:hover {
 
 /* Lado izquierdo */
 .contact-info .badge {
-  background: rgba(194, 123, 63, 0.15);
+  background: rgba(95, 66, 99, 0.15);
   color: var(--primary-color);
   padding: 6px 14px;
   border-radius: 20px;
@@ -373,7 +370,7 @@ nav ul li a:hover {
   font-weight: 600;
   display: inline-block;
   margin-bottom: 15px;
-  border: 1px solid rgba(194, 123, 63, 0.3);
+  border: 1px solid rgba(72, 51, 35, 0.3);
 }
 
 .contact-info h2 {
@@ -452,7 +449,7 @@ nav ul li a:hover {
   /* Crea una linterna suave en la posición exacta del cursor */
   background: radial-gradient(
     600px circle at var(--x, 50%) var(--y, 50%),
-    rgba(194, 123, 63, 0.15), /* Color dorado de tu marca con opacidad */
+    rgba(223, 220, 218, 0.15), /* Color dorado de tu marca con opacidad */
     transparent 40%
   );
   opacity: 0;
@@ -799,6 +796,123 @@ nav ul li a:hover {
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
 }
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0; /* la imagen ocupa todo el ancho de la tarjeta */
+}
+
+/* Imagen a todo el ancho, con proporción fija */
+.project-card-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.project-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-card-image img {
+  transform: scale(1.03);
+}
+
+/* Contenido: el botón siempre queda abajo, alineado entre tarjetas */
+.project-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px;
+}
+
+.project-card-content h3 {
+  margin-bottom: 10px;
+}
+
+.project-card-content p {
+  margin-bottom: 16px;
+}
+
+/* Tags más discretos */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.tags span {
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+
+.btn-card {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Proyecto destacado */
+.project-card--featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+}
+
+.project-card--featured .project-card-image {
+  flex: 1.4;
+  aspect-ratio: auto;
+  min-height: 340px;
+}
+
+.project-card--featured .project-card-content {
+  flex: 1;
+  justify-content: center;
+  padding: 36px;
+}
+
+.project-card--featured .btn-card {
+  margin-top: 0;
+}
+
+.project-badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  background: var(--primary-color, #8b5cf6);
+  color: #fff;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+ 
+  .project-card--featured {
+    flex-direction: column;
+  }
+  .project-card--featured .project-card-image {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+  .project-card--featured .project-card-content {
+    padding: 24px;
+  }
+}
+
 /* Adaptación Responsive para Móviles */
 @media (max-width: 900px) {
   .footer-container {
@@ -816,5 +930,105 @@ nav ul li a:hover {
     flex-direction: column;
     gap: 8px;
     text-align: center;
+  }
+}
+/* ===== MÓVIL Y TABLET (≤ 768px) ===== */
+@media (max-width: 768px) {
+
+  /* .spotlight le mete padding: 40px a las secciones y pisa el tuyo.
+     Aquí lo dejamos en un valor razonable para móvil */
+  .projects,
+  .proceso,
+  .contacto {
+    padding: 70px 0;
+  }
+
+  .projects h2 {
+    font-size: 2rem;
+  }
+
+  .projects .subtitle {
+    font-size: 1rem;
+    margin-bottom: 36px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  /* Destacado: imagen arriba, texto debajo */
+  .project-card--featured {
+    flex-direction: column;
+  }
+
+  .project-card--featured .project-card-image,
+  .project-card--featured .project-card-content {
+    flex: none;
+  }
+
+  .project-card--featured .project-card-image {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-card-content,
+  .project-card--featured .project-card-content {
+    padding: 20px;
+  }
+
+  .project-card-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-card-content p {
+    font-size: 0.95rem;
+  }
+
+  /* Botón a todo el ancho, más fácil de pulsar con el dedo */
+  .btn-card,
+  .project-card--featured .btn-card {
+    align-self: stretch;
+    padding: 14px 20px;
+  }
+}
+
+/* En pantallas táctiles el hover se queda "pegado" tras tocar, así que lo quitamos */
+@media (hover: none) {
+  .project-card:hover {
+    transform: none;
+  }
+  .project-card:hover .project-card-image img {
+    transform: none;
+  }
+}
+
+/* Móviles pequeños: el logo largo + 4 enlaces no caben en una línea */
+@media (max-width: 600px) {
+  header .logo span {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 100svh;
+    align-items: flex-end;   /* botones abajo */
+    padding-bottom: 12vh;
+  }
+
+  .hero-img {
+    top: 0;
+    left: 0;
+    transform: none;
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-buttons {
+    margin-top: 0;           /* quita los 300px del escritorio */
   }
 }
