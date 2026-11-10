@@ -37,3 +37,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('header nav');
+const navLinks = document.querySelectorAll('header nav a');
+
+menuToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('active');
+
+    menuToggle.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    menuToggle.setAttribute('aria-label',
+        isOpen ? 'Cerrar menú' : 'Abrir menú'
+    );
+});
+
+// Seleccionar opción y cerrar menú
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+
+        // Quitar selección anterior
+        navLinks.forEach(item => {
+            item.classList.remove('active-link');
+        });
+
+        // Marcar opción seleccionada
+        link.classList.add('active-link');
+
+        // Cerrar menú
+        nav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú');
+    });
+});
+
+
