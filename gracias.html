@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Mensaje enviado | YMAESTUDIO</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/x-icon" href="/resources/ymaestudio-favicon.ico">
+
+  <style>
+    /* ===== PÁGINA DE GRACIAS ===== */
+    .thanks {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 110px 20px 60px;
+      text-align: center;
+    }
+
+    .thanks-inner {
+      max-width: 520px;
+    }
+
+    /* Check animado: lo único que se mueve solo en la página */
+    .check-wrap {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 32px;
+    }
+
+    .check-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -90px;
+      background: radial-gradient(circle, rgba(152, 82, 253, 0.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .check {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .check-ring {
+      stroke: var(--primary-color);
+      stroke-width: 3;
+      fill: rgba(152, 82, 253, 0.12);
+      stroke-dasharray: 264;
+      stroke-dashoffset: 264;
+      animation: draw 0.8s cubic-bezier(0.6, 0, 0.2, 1) 0.15s forwards;
+    }
+
+    .check-tick {
+      stroke: #ffffff;
+      stroke-width: 5;
+      stroke-dasharray: 56;
+      stroke-dashoffset: 56;
+      animation: draw 0.45s ease-out 0.85s forwards;
+    }
+
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .thanks-text {
+      animation: appear 0.6s ease-out 1.15s both;
+    }
+
+    .thanks h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .thanks-text > p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 46ch;
+      margin: 0 auto;
+    }
+
+    .thanks-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .thanks-note {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.95rem;
+      color: #8f8f9d;
+    }
+
+    .thanks-note a {
+      color: var(--primary-color);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .thanks-note a:hover {
+      text-decoration: underline;
+    }
+
+    /* Foco visible para quien navega con teclado */
+    .thanks a:focus-visible,
+    header a:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 480px) {
+      .thanks-actions .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .check-ring,
+      .check-tick {
+        animation: none;
+        stroke-dashoffset: 0;
+      }
+      .thanks-text {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER (igual que el de la página principal) -->
+  <header>
+    <div class="container">
+      <a href="/" class="logo" style="text-decoration: none;">YMAE <span>Designs & Development</span></a>
+      <nav>
+        <ul>
+          <li><a href="/#hero">Inicio</a></li>
+          <li><a href="/#proyectos">Proyectos</a></li>
+          <li><a href="/#proceso">Proceso</a></li>
+          <li><a href="/#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="thanks">
+    <div class="thanks-inner">
+
+      <div class="check-wrap" aria-hidden="true">
+        <svg class="check" viewBox="0 0 96 96">
+          <circle class="check-ring" cx="48" cy="48" r="42" transform="rotate(-90 48 48)" />
+          <path class="check-tick" d="M30 49 L43 62 L68 35" />
+        </svg>
+      </div>
+
+      <div class="thanks-text">
+        <h1>Mensaje enviado</h1>
+        <p>Me ha llegado tu mensaje. Te responderé por correo en menos de 24 horas, con una propuesta sin
+          compromiso.</p>
+
+        <div class="thanks-actions">
+          <a href="/" class="btn btn-primary">Volver al inicio</a>
+          <a href="/#proyectos" class="btn btn-secondary">Ver mis proyectos</a>
+        </div>
+
+        <p class="thanks-note">¿Es urgente? Escríbeme por
+          <a href="https://wa.me/34607454400" target="_blank" rel="noopener noreferrer">WhatsApp</a>.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+
+</html>
